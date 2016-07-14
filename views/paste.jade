@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/foundation.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css')
+  body
+    include ./includes/navbar.jade
+    
+    include ./paste_output.jade
+
+    script(src="/javascripts/vendor/foundation.min.js")
+    script(src="/javascripts/vendor/jquery.js")
+    script(src="/javascripts/vendor/what-input.js")

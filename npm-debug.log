@@ -1,0 +1,98 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/5.10.1/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--',
+1 verbose cli   'save',
+1 verbose cli   '../connect.js' ]
+2 info using npm@3.8.3
+3 info using node@v5.10.1
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData save
+8 silly fetchPackageMetaData ../connect.js
+9 silly fetchNamedPackageData save
+10 silly mapToRegistry name save
+11 silly mapToRegistry using default registry
+12 silly mapToRegistry registry https://registry.npmjs.org/
+13 silly mapToRegistry data Result {
+13 silly mapToRegistry   raw: 'save',
+13 silly mapToRegistry   scope: null,
+13 silly mapToRegistry   name: 'save',
+13 silly mapToRegistry   rawSpec: '',
+13 silly mapToRegistry   spec: 'latest',
+13 silly mapToRegistry   type: 'tag' }
+14 silly mapToRegistry uri https://registry.npmjs.org/save
+15 silly fetchOtherPackageData ../connect.js
+16 silly cache add args [ '../connect.js', null ]
+17 verbose cache add spec ../connect.js
+18 silly cache add parsed spec Result {
+18 silly cache add   raw: '../connect.js',
+18 silly cache add   scope: null,
+18 silly cache add   name: null,
+18 silly cache add   rawSpec: '../connect.js',
+18 silly cache add   spec: '/Users/Brett/Documents/workspace/connect.js',
+18 silly cache add   type: 'local' }
+19 error addLocal Could not install /Users/Brett/Documents/workspace/connect.js
+20 silly fetchPackageMetaData Error: ENOENT: no such file or directory, open '/Users/Brett/Documents/workspace/connect.js'
+20 silly fetchPackageMetaData     at Error (native)
+20 silly fetchPackageMetaData  error for ../connect.js { [Error: ENOENT: no such file or directory, open '/Users/Brett/Documents/workspace/connect.js']
+20 silly fetchPackageMetaData   errno: -2,
+20 silly fetchPackageMetaData   code: 'ENOENT',
+20 silly fetchPackageMetaData   syscall: 'open',
+20 silly fetchPackageMetaData   path: '/Users/Brett/Documents/workspace/connect.js' }
+21 verbose request uri https://registry.npmjs.org/save
+22 verbose request no auth needed
+23 info attempt registry request try #1 at 3:21:48 PM
+24 verbose request id f90e5c9f8e265b4e
+25 verbose etag "6DEQ55OQWC3YE05VRYI5EOMX3"
+26 http request GET https://registry.npmjs.org/save
+27 http 304 https://registry.npmjs.org/save
+28 verbose headers { date: 'Wed, 13 Jul 2016 05:21:49 GMT',
+28 verbose headers   via: '1.1 varnish',
+28 verbose headers   'cache-control': 'max-age=300',
+28 verbose headers   etag: '"6DEQ55OQWC3YE05VRYI5EOMX3"',
+28 verbose headers   age: '23',
+28 verbose headers   connection: 'keep-alive',
+28 verbose headers   'x-served-by': 'cache-syd1623-SYD',
+28 verbose headers   'x-cache': 'HIT',
+28 verbose headers   'x-cache-hits': '1',
+28 verbose headers   'x-timer': 'S1468387309.026807,VS0,VE0',
+28 verbose headers   vary: 'Accept-Encoding' }
+29 silly get cb [ 304,
+29 silly get   { date: 'Wed, 13 Jul 2016 05:21:49 GMT',
+29 silly get     via: '1.1 varnish',
+29 silly get     'cache-control': 'max-age=300',
+29 silly get     etag: '"6DEQ55OQWC3YE05VRYI5EOMX3"',
+29 silly get     age: '23',
+29 silly get     connection: 'keep-alive',
+29 silly get     'x-served-by': 'cache-syd1623-SYD',
+29 silly get     'x-cache': 'HIT',
+29 silly get     'x-cache-hits': '1',
+29 silly get     'x-timer': 'S1468387309.026807,VS0,VE0',
+29 silly get     vary: 'Accept-Encoding' } ]
+30 verbose etag https://registry.npmjs.org/save from cache
+31 verbose get saving save to /Users/Brett/.npm/registry.npmjs.org/save/.cache.json
+32 verbose correctMkdir /Users/Brett/.npm correctMkdir not in flight; initializing
+33 silly rollbackFailedOptional Starting
+34 silly rollbackFailedOptional Finishing
+35 silly runTopLevelLifecycles Starting
+36 silly runTopLevelLifecycles Finishing
+37 silly install printInstalled
+38 verbose stack Error: ENOENT: no such file or directory, open '/Users/Brett/Documents/workspace/connect.js'
+38 verbose stack     at Error (native)
+39 verbose cwd /Users/Brett/Documents/workspace/espresso-paste
+40 error Darwin 15.5.0
+41 error argv "/usr/local/Cellar/node/5.10.1/bin/node" "/usr/local/bin/npm" "install" "--" "save" "../connect.js"
+42 error node v5.10.1
+43 error npm  v3.8.3
+44 error path /Users/Brett/Documents/workspace/connect.js
+45 error code ENOENT
+46 error errno -2
+47 error syscall open
+48 error enoent ENOENT: no such file or directory, open '/Users/Brett/Documents/workspace/connect.js'
+49 error enoent ENOENT: no such file or directory, open '/Users/Brett/Documents/workspace/connect.js'
+49 error enoent This is most likely not a problem with npm itself
+49 error enoent and is related to npm not being able to find a file.
+50 verbose exit [ -2, true ]
