@@ -7,7 +7,7 @@ A pastebin web application using nodejs/express
 Currently setup to use rethinkDB and the THINKY ORM  and therefore
 requires a RethinkDB database config file named "connect.js" in the projects root directory
 <snippet>
-
+<content>
 var thinky = require("thinky")({
     host: "localhost",
     port: 28015,
@@ -16,7 +16,7 @@ var thinky = require("thinky")({
 });
 
 module.exports = thinky;
-
+</content>
 </snippet>
 
 ## Contributing
