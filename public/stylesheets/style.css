@@ -7,7 +7,8 @@
   width: 80vw;
   height: 80vh;
   color: cyan;
-  background:#222222;
+  background:#272822;
+
   overflow:auto;
   word-wrap:break-word;
   white-space: pre;
@@ -17,6 +18,7 @@ textarea {
    font-family: inherit;
    font-size: inherit;
 }
+
 p {
   font-family: "Inconsolata", "Monaco", "Consolas",;
   font-weight: 700;

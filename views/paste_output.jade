@@ -2,6 +2,8 @@
 .row
     .medium-6.columns
         h1 #{locals.title}
-            .pastebox
-                p #{locals.text}
+        .pastebox
+            pre(class=locals.lang)
+                code
+                    p #{locals.text}
         
