@@ -15,7 +15,8 @@ var type = thinky.type;
 global.Paste = thinky.createModel("pastes", {
     id: type.string(),
     title: type.string(),
-    text: type.string()
+    text: type.string(),
+    lang: type.string()
 });
 
 

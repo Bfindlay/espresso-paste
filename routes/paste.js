@@ -14,10 +14,12 @@ router.get('/:id', function(req,res,next){
         Paste.get(req.params.id).run().then(function(paste) {
         const texts = paste.text;
         const title = paste.title;
+        const lang = ("language-"+paste.lang);
         console.log(texts);
         res.render('paste', { 
             title: title,
-            text: texts
+            text: texts,
+            lang: lang
         });
     }).error(function(error) {
         // TODO Document not found, network errors etc.
@@ -26,6 +28,7 @@ router.get('/:id', function(req,res,next){
 });
 //TODO add proper error handling in callback and check db call
 router.post("/submit", function(req,res,next){
+    console.log(req.body.lang);
     //Get title async
     //TODO add error checing for the id
    let getId = () => {
@@ -38,7 +41,8 @@ router.post("/submit", function(req,res,next){
         var paste = new Paste({
             id: id,
             title: req.body.title,
-            text: req.body.text 
+            text: req.body.text ,
+            lang: req.body.lang
         });
         paste.save(function(error, doc) {
             if (error){
@@ -51,10 +55,6 @@ router.post("/submit", function(req,res,next){
     getId().then(render);
 })
 
-let getId = () => { 
-    let n = randomstring.generate(6);
-    return (Paste.get(n) !== null)  ? n : getId();
-}
 
 
 module.exports = router;
