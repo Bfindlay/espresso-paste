@@ -1,6 +1,6 @@
 # Espresso-Paste
 
-A pastebin web application using nodejs/express
+A simple pastebin web application using nodejs and expressjs to generate and store paste with syntax hihglighting in a rethinkdb server
 
 
 ## Usage
