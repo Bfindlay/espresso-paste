@@ -7,11 +7,11 @@ var randomstring = require("randomstring");
 router.get('/', function(req,res,next){
     res.redirect('/');
 });
- 
+
 //TODO Add propper error handling
 router.get('/:id', function(req,res,next){
      
-    Paste.get(req.params.id).run().then(function(paste) {
+        Paste.get(req.params.id).run().then(function(paste) {
         const texts = paste.text;
         const title = paste.title;
         console.log(texts);
@@ -24,24 +24,37 @@ router.get('/:id', function(req,res,next){
         console.log("err");
     });
 });
-//TODO add proper error handling in callback
+//TODO add proper error handling in callback and check db call
 router.post("/submit", function(req,res,next){
-    const id = getId();
-    var paste = new Paste({
-        id: id,
-        title: req.body.title,
-        text: req.body.text 
-    })
-    paste.save(function(error, doc) {
-        if (error) console.log(error);
-        else console.log("saved!"); 
-    });
-    res.redirect("./"+id);
+    //Get title async
+    //TODO add error checing for the id
+   let getId = () => {
+        var id = randomstring.generate(8);
+        return (Paste.get(id) !== null)  ? Promise.resolve(id) : getId();
+        //return Promise.resolve(id)
+    };
+    //once promise resolved, render it to the page
+    let render = id => {
+        var paste = new Paste({
+            id: id,
+            title: req.body.title,
+            text: req.body.text 
+        });
+        paste.save(function(error, doc) {
+            if (error){
+                console.log("error in submit")
+                res.redirect("../error");
+            } 
+            else res.redirect("./"+id); 
+        });
+    }
+    getId().then(render);
 })
 
 let getId = () => { 
     let n = randomstring.generate(6);
     return (Paste.get(n) !== null)  ? n : getId();
 }
+
 
 module.exports = router;
